@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
+
+:root {
+  --loader-primary: #29ABE2;
+  --loader-secondary: #FF4081;
+  --loader-dark: #2A333B;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #0c0c0c;
@@ -965,4 +972,142 @@ a:focus {
 .footer_section .footer-info p a {
   color: inherit;
 }
-/*# sourceMappingURL=style.css.map */
+
+/* Ice cream Loader */
+.page-wrapper{
+  background-color: var(--loader-secondary);
+  width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  position: fixed;
+  z-index: 100;
+}
+
+.loader{
+  position: relative;
+	width: 100px;
+	margin: 50px;
+}
+	
+.jelly {
+  animation: jumping 1s infinite;
+}
+
+.stick{
+  width: 30px;
+  height: 50px;
+  background-color: #C59B6C;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.body {
+  width: 100px;
+  height: 190px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: var(--loader-primary);
+  animation: body 1s infinite;
+  z-index: 1;
+  }
+		
+.mouth {
+  position: absolute;
+  top: 105px;
+  left: 32px;
+  width: 30px;
+  height: 20px;
+  border: 3px solid var(--loader-dark);
+  border-radius: 0 0 40px 40px;
+  background-color: var(--loader-dark);
+  overflow: hidden;
+  z-index: 1;
+  }
+  
+.mouth:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 40px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--loader-secondary);
+  }
+  
+		
+.eye {
+  position: absolute;
+  top: 85px;
+  width: 10px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--loader-dark);
+  animation: eye 6s infinite;
+  }
+		
+.eye:nth-child(even) {
+  left: 20px
+}
+		
+.eye:nth-child(odd) {
+  right: 20px
+}
+
+.shadow {
+  position: absolute;
+  bottom: -10px;
+  z-index: -1;
+  width: 100px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: alpha(var(--loader-dark), 20%);
+  animation: shadow 1s infinite;
+}
+		
+@keyframes jumping {
+	0% {
+		transform: translateY(-40px);
+	}
+	70% {
+		transform: scale(1.02, 0.9) translateY(10px);
+	}
+	100% {
+		transform: translateY(-40px);
+	}
+}
+
+@keyframes eye {
+	0% {
+		transform: scale(1);
+	}
+	2% {
+		transform: scale(2, 0.2);
+	}
+	4% {
+		transform: scale(1);
+	}
+	6% {
+		transform: scale(2, 0.2);
+	}
+	8% {
+		transform: scale(1);
+	}
+}
+
+@keyframes shadow {
+	0% {
+		transform: scaleX(0.9);
+	}
+	70% {
+		transform: scaleX(1);
+	}
+	100% {
+		transform: scaleX(0.9);
+	}
+}
