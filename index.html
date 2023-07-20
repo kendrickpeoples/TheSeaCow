@@ -492,19 +492,22 @@
           <div class="form_container">
             <form action="">
               <div>
-                <input type="text" class="form-control" placeholder="Your Name" />
+                <input type="text" name="name" class="form-control" placeholder="Your Name" />
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
+                <input type="text" name="phone" class="form-control" placeholder="Phone Number" />
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Your Email" />
+                <input type="text" name="subject" class="form-control" placeholder="Subject" />
               </div>
               <div>
-                <textarea class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+                <input type="email" name="mail" class="form-control" placeholder="Your Email" />
+              </div>
+              <div>
+                <textarea class="form-control" name="message" cols="30" rows="10" placeholder="Message"></textarea>
               </div>
               <div class="btn_box">
-                <button>
+                <button type="submit" name="submit">
                   Send
                 </button>
               </div>
