@@ -44,6 +44,19 @@
 
 <body class="sub_page">
 
+  <div class="page-wrapper" id="preloader">
+    <div class="loader">
+      <div class="jelly">
+        <div class="body"></div>
+        <div class="stick"></div>
+        <div class="eye"></div>
+        <div class="eye"></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+
   <div class="hero_area">
     <div class="bg-box">
       <img src="images/hero-bg.jpg" alt="">
@@ -208,6 +221,14 @@
   </footer>
   <!-- footer section -->                                       
 
+  <!--Loader-->
+  <script>
+    var loader = document.getElementById("preloader");
+
+    window.addEventListener("load", function(){
+      loader.style.display = "none";
+    })
+  </script>
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->

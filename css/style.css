@@ -1111,3 +1111,10 @@ a:focus {
 		transform: scaleX(0.9);
 	}
 }
+
+@media (max-width: 390px) {
+  .bg-box img {
+    width: 1200px;
+    transform: translateX(-600px);
+  }
+}
