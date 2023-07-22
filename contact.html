@@ -30,17 +30,19 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJPKQ4GNZM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YJPKQ4GNZM');
+  </script>
+
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJPKQ4GNZM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YJPKQ4GNZM');
-</script>
 
 <body class="sub_page">
 
@@ -113,7 +115,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form action="contact.php" method="POST">
+            <form name="contactForm" action="contact.php" method="POST" onsubmit="return validateForm()">
               <div>
                 <input type="text" name="name" class="form-control" placeholder="Your Name" />
               </div>
@@ -129,6 +131,7 @@
               <div>
                 <textarea class="form-control" name="message" cols="30" rows="10" placeholder="Message"></textarea>
               </div>
+              <div class="g-recaptcha" data-sitekey="6LeC-0UnAAAAAAfRosBC8DGUDnGbjF4tVhWY6_4m"></div>
               <div class="btn_box">
                 <button type="submit" name="submit">
                   Send
@@ -233,6 +236,28 @@
   </script>
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- Form Validation -->
+  <script>
+    function validateForm() {
+      // Get form inputs
+      var name = document.forms["contactForm"]["name"].value;
+      var email = document.forms["contactForm"]["mail"].value;
+      var message = document.forms["contactForm"]["message"].value;
+  
+      // Check if required fields are filled
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+  
+      // Validate email format using regular expression
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+    }
+  </script>
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
