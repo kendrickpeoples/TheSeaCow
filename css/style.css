@@ -1112,9 +1112,3 @@ a:focus {
 	}
 }
 
-@media (max-width: 390px) {
-  .bg-box img {
-    width: 1200px;
-    transform: translateX(-600px);
-  }
-}
