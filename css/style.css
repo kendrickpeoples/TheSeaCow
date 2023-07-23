@@ -1112,3 +1112,6 @@ a:focus {
 	}
 }
 
+.detail-box h2 {
+  font-size: 50px;
+}
